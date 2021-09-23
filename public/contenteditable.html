@@ -29,7 +29,11 @@
         info.addEventListener('input', event => {
             console.log(info.innerHTML);
             console.log(info.innerText);
-        })
+
+            localStorage.setItem('contenteditable', info.innerText);
+        });
+
+        info.innerText = localStorage.getItem('contenteditable') || '...可輸入文字...';
 
     </script>
 </body>
